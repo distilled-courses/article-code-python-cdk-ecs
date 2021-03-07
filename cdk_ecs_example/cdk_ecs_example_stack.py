@@ -12,4 +12,4 @@ class CdkEcsExampleStack(core.Stack):
         vpc.add_interface_endpoint('EcrDockerEndpoint', service=ec2.InterfaceVpcEndpointAwsService.ECR_DOCKER)
         vpc.add_interface_endpoint('EcrEndpoint', service=ec2.InterfaceVpcEndpointAwsService.ECR)
         vpc.add_interface_endpoint('CloudWatchLogsEndpoint', service=ec2.InterfaceVpcEndpointAwsService.CLOUDWATCH_LOGS)
-        ecs.Cluster(self, "EcsCluster", cluster_name="EcsCluster", vpc=vpc)
+        ecs.Cluster(self, "EcsCluster", vpc=vpc)
